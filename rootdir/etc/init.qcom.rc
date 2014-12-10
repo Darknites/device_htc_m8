@@ -617,9 +617,11 @@ on property:service.bootanim.exit=1
     write /dev/cpuctl/apps/cpu.notify_on_migrate "1"
 
     write /sys/module/cpu_boost/parameters/boost_ms "20"
-    write /sys/module/cpu_boost/parameters/sync_threshold "1728000"
-    write /sys/module/cpu_boost/parameters/input_boost_freq "1497600"
+    write /sys/module/cpu_boost/parameters/sync_threshold "1497600"
+    write /sys/module/cpu_boost/parameters/input_boost_freq "1190400"
     write /sys/module/cpu_boost/parameters/input_boost_ms "40"
+
+    write /sys/module/snd_soc_wcd9320/parameters/high_perf_mode "1"
 
 on property:init.svc.bootanim=running
     # Switch to NOOP and performance mode while booting
